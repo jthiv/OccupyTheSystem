@@ -1,23 +1,8 @@
-
+USE database_name;
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
-
---
--- Database: `db520922433`
---
-
--- --------------------------------------------------------
-
---
--- Table structure for table `bill_stances`
---
 
 CREATE TABLE IF NOT EXISTS `bill_stances` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
@@ -29,12 +14,6 @@ CREATE TABLE IF NOT EXISTS `bill_stances` (
   PRIMARY KEY (`ID`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci AUTO_INCREMENT=56 ;
 
--- --------------------------------------------------------
-
---
--- Table structure for table `community_categories`
---
-
 CREATE TABLE IF NOT EXISTS `community_categories` (
   `category_id` int(11) NOT NULL AUTO_INCREMENT,
   `category_name` varchar(250) COLLATE latin1_general_ci NOT NULL,
@@ -43,23 +22,11 @@ CREATE TABLE IF NOT EXISTS `community_categories` (
   PRIMARY KEY (`category_id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci AUTO_INCREMENT=7 ;
 
--- --------------------------------------------------------
-
---
--- Table structure for table `community_sections`
---
-
 CREATE TABLE IF NOT EXISTS `community_sections` (
   `section_id` int(11) NOT NULL AUTO_INCREMENT,
   `section_name` varchar(10) COLLATE latin1_general_ci NOT NULL,
   PRIMARY KEY (`section_id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci AUTO_INCREMENT=5 ;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `community_thread_votes`
---
 
 CREATE TABLE IF NOT EXISTS `community_thread_votes` (
   `vote_id` int(11) NOT NULL AUTO_INCREMENT,
@@ -68,12 +35,6 @@ CREATE TABLE IF NOT EXISTS `community_thread_votes` (
   `vote_value` enum('up','down') COLLATE latin1_general_ci NOT NULL,
   PRIMARY KEY (`vote_id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci AUTO_INCREMENT=114 ;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `community_threads`
---
 
 CREATE TABLE IF NOT EXISTS `community_threads` (
   `thread_id` int(11) NOT NULL AUTO_INCREMENT,
@@ -89,23 +50,11 @@ CREATE TABLE IF NOT EXISTS `community_threads` (
   PRIMARY KEY (`thread_id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci AUTO_INCREMENT=132 ;
 
--- --------------------------------------------------------
-
---
--- Table structure for table `issuesList`
---
-
 CREATE TABLE IF NOT EXISTS `issuesList` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
   `issueName` varchar(250) COLLATE latin1_german2_ci NOT NULL,
   PRIMARY KEY (`ID`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 COLLATE=latin1_german2_ci AUTO_INCREMENT=976 ;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `message`
---
 
 CREATE TABLE IF NOT EXISTS `message` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
@@ -115,12 +64,6 @@ CREATE TABLE IF NOT EXISTS `message` (
   `timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`ID`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci AUTO_INCREMENT=3 ;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `news_threads`
---
 
 CREATE TABLE IF NOT EXISTS `news_threads` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
@@ -136,12 +79,6 @@ CREATE TABLE IF NOT EXISTS `news_threads` (
   PRIMARY KEY (`ID`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci AUTO_INCREMENT=1 ;
 
--- --------------------------------------------------------
-
---
--- Table structure for table `newtable`
---
-
 CREATE TABLE IF NOT EXISTS `newtable` (
   `thread_id` int(11) NOT NULL AUTO_INCREMENT,
   `thread_parent_id` int(11) DEFAULT NULL,
@@ -155,24 +92,12 @@ CREATE TABLE IF NOT EXISTS `newtable` (
   PRIMARY KEY (`thread_id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci AUTO_INCREMENT=130 ;
 
--- --------------------------------------------------------
-
---
--- Table structure for table `notes`
---
-
 CREATE TABLE IF NOT EXISTS `notes` (
   `note_id` int(11) NOT NULL AUTO_INCREMENT,
   `note_text` text COLLATE utf8_unicode_ci NOT NULL,
   `user_id` bigint(20) NOT NULL,
   PRIMARY KEY (`note_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='user data' AUTO_INCREMENT=1 ;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `pledge`
---
 
 CREATE TABLE IF NOT EXISTS `pledge` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -184,12 +109,6 @@ CREATE TABLE IF NOT EXISTS `pledge` (
   UNIQUE KEY `id` (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci AUTO_INCREMENT=13 ;
 
--- --------------------------------------------------------
-
---
--- Table structure for table `user_follow`
---
-
 CREATE TABLE IF NOT EXISTS `user_follow` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
   `userID` int(11) NOT NULL,
@@ -198,12 +117,6 @@ CREATE TABLE IF NOT EXISTS `user_follow` (
   PRIMARY KEY (`ID`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci AUTO_INCREMENT=33 ;
 
--- --------------------------------------------------------
-
---
--- Table structure for table `user_issues`
---
-
 CREATE TABLE IF NOT EXISTS `user_issues` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
   `issueID` int(11) NOT NULL,
@@ -211,23 +124,11 @@ CREATE TABLE IF NOT EXISTS `user_issues` (
   PRIMARY KEY (`ID`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci AUTO_INCREMENT=316 ;
 
--- --------------------------------------------------------
-
---
--- Table structure for table `user_messages`
---
-
 CREATE TABLE IF NOT EXISTS `user_messages` (
   `senderID` int(11) NOT NULL,
   `recieverID` int(11) NOT NULL,
   `messageID` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `user_stance_requests`
---
 
 CREATE TABLE IF NOT EXISTS `user_stance_requests` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
@@ -237,12 +138,6 @@ CREATE TABLE IF NOT EXISTS `user_stance_requests` (
   `billID` varchar(250) COLLATE latin1_general_ci NOT NULL,
   PRIMARY KEY (`ID`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci AUTO_INCREMENT=18 ;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `users`
---
 
 CREATE TABLE IF NOT EXISTS `users` (
   `user_id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'auto incrementing user_id of each user, unique index',
@@ -272,6 +167,3 @@ CREATE TABLE IF NOT EXISTS `users` (
   KEY `user_facebook_uid` (`user_facebook_uid`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='user data' AUTO_INCREMENT=226 ;
 
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
