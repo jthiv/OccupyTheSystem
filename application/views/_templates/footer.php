@@ -1,5 +1,5 @@
 </div>
-<span style="margin-left: auto; margin-right: auto; color: #fff;">(C)<?php echo date("Y"); ?> OccupyTheSystem.Org. | <a href="<?php echo URL; ?>index/contact" style="color: #fff;">Contact Us</a> - <a href="<?php echo URL; ?>index/policy" style="color: #fff;">Privacy Policy</a>
+<span style="margin-left: auto; margin-right: auto; color: #fff;">(C)<?php echo date("Y"); ?> OccupyTheSystem.Org. | <a href="<?php echo URL; ?>index/contact" style="color: #fff;">Contact Us</a> - <a href="https://github.com/jthiv/OccupyTheSystem/tree/dev" style="color: #fff;">Developers</a> - <a href="<?php echo URL; ?>index/policy" style="color: #fff;">Privacy Policy</a>
     </div>
 	<script>
 	//Add nicEditors
