@@ -22,6 +22,14 @@ CREATE TABLE IF NOT EXISTS `community_categories` (
   PRIMARY KEY (`category_id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci AUTO_INCREMENT=7 ;
 
+INSERT INTO `community_categories` (`category_id`, `category_name`, `section_id`, `category_description`) VALUES
+(1, 'Site Discussion', 2, 'Anything regarding the site in general can go in this section. Report bugs, get support, and ask questions.'),
+(2, 'Legislators', 2, 'Threads about specific politicians should be posted here.'),
+(3, 'Legislation', 2, 'Threads about specific legislation should be posted here.'),
+(4, 'General', 2, 'Threads that do not fit into the other categories may be posted here.'),
+(5, 'News', 2, 'Share news here'),
+(6, 'Videos', 2, 'Share videos here');
+
 CREATE TABLE IF NOT EXISTS `community_sections` (
   `section_id` int(11) NOT NULL AUTO_INCREMENT,
   `section_name` varchar(10) COLLATE latin1_general_ci NOT NULL,
